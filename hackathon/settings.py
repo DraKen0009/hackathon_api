@@ -4,17 +4,17 @@ from pathlib import Path
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-# SECRET_KEY = 'django-insecure-y@!d3_&br7g+1b+xi7-weu%6^lf#s_zt_bs&cjhoauef=7z$je'
+SECRET_KEY = 'django-insecure-y@!d3_&br7g+1b+xi7-weu%6^lf#s_zt_bs&cjhoauef=7z$je'
+
+DEBUG = True
+
+ALLOWED_HOSTS = []
 #
-# DEBUG = True
+# SECRET_KEY = os.environ.get('SECRET_KEY')
 #
-# ALLOWED_HOSTS = []
-
-SECRET_KEY = os.environ.get('SECRET_KEY')
-
-DEBUG = os.environ.get("DEBUG", "False").lower() == "true"
-
-ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS').split(" ")
+# DEBUG = os.environ.get("DEBUG", "False").lower() == "true"
+#
+# ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS').split(" ")
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -66,8 +66,8 @@ DATABASES = {
     }
 }
 
-database_url = os.environ.get("DATABASE_URL")
-DATABASES["default"] = dj_database_url.parse(database_url)
+# database_url = os.environ.get("DATABASE_URL")
+# DATABASES["default"] = dj_database_url.parse(database_url)
 
 AUTH_PASSWORD_VALIDATORS = [
     {'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator'},
@@ -103,4 +103,4 @@ SIMPLE_JWT = {
     'REFRESH_TOKEN_LIFETIME': timedelta(days=30),
 }
 
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+# STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
