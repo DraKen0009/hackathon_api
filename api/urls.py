@@ -20,6 +20,6 @@ urlpatterns = [
     path('hackathons/register/', HackathonRegistrationView.as_view(), name='hackathon_registration'),
     path('hackathons/<int:pk>/submission/', HackathonSubmissionView.as_view(), name='hackathon_submission'),
     path('registered-hackathons/', EnrolledHackathonListView.as_view(), name='register-hackathon-list'),
-    path('registered-hackathons/<int:pk>/submission/', UserSubmissionInView.as_view(),name='user-submission-in-hackathon'),
+    path('registered-hackathons/submission/', UserSubmissionInView.as_view(),name='user-submission-in-hackathon'),
 
 ]
